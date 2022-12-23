@@ -1,0 +1,15 @@
+<h1>Topic Show page</h1>
+
+<h3>Game Topic: <%= @topic.title %></h3>
+<ul>
+<h3><%= @topic.body %></h3>
+</ul>
+
+<% @comments.each do |comment| %>
+  <ul>
+  <ul>
+    <h4>Comment:</h4>
+      <%= comment.body %>
+   </ul>
+   </ul>
+  <% end %>

@@ -1,0 +1,45 @@
+<div class="container">
+
+
+<h2>Forum Page</h2>
+<h4>A plae to share your gaming experience...</h4>
+
+<br>
+<%= image_tag("bar1.png")  %>
+<br>
+<br>
+<button>Start a new topic</button> 
+<br>
+<br>
+<div class="container">
+<% @topics.each do |topic| %>
+
+
+  <div>
+    <h4><%= link_to topic.title, topic %></h4>
+    
+    <%= topic.body %>
+    <button>Reply to this topic</button> 
+    <br>
+    <br>
+  </div>
+
+<% topic.comments.order(created_at: :desc).each do |comment| %>
+
+<ul>
+<li>
+<%= comment.body %>
+</li>
+</ul>
+  <% end %>
+  <br>
+  <hr>
+  <br>
+
+<% end %>
+</ul>
+</div>
+</div>
+
+
+ 

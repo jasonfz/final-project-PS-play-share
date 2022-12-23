@@ -1,0 +1,90 @@
+
+<div class="container">
+  
+<h3>Game Show page</h3>
+<h5>Find info, available rentals and topics about this game...</h5>
+<br>
+<%= image_tag("bar1.png")  %>
+
+<br>
+<br>
+
+<div class="container">
+<h3><%= @game.title %></h3>
+<br>
+<%= image_tag(@game.image_url, class: "show-image")%>
+<br>
+<br>
+<div class="container">
+<p><%= @game.description %></p>
+</div>
+<h5>platform</h5>
+
+<h5>Game Reviews</h5>
+
+<h5>User Reviews</h5>
+<h5>other related game info</h5>
+<br>
+<hr>
+
+<h4>Suggested rental price:</h4>
+<h4>$<%= @game.suggested_rental_price %> per week </h4>
+<br>
+
+</div>
+<%= image_tag("bar1.png")  %>
+<br>
+<br>
+<h4>Available rentals:</h4>
+
+ <% @rentals.each do |rental| %>
+ 
+ <ol>
+  <h5><%= link_to rental.description, rental %></h5>
+  <h5>Game owner: <%= rental.user.first_name %></h5>
+  <ul>
+  <h5><%= rental.rental_time %> Weeks for $ <%= rental.rental_price %></h5>
+  </ul>
+  </ol>
+  <hr>
+ <% end %>
+ <button>To post yours here</button>
+ <br>
+
+<br>
+ <%= image_tag("bar.png")  %>
+ <br>
+<br>
+ <h4>Forum Topics about this game:</h4>
+ 
+ <button>Post new topic about this game</button>
+<hr>
+<ul>
+  <% @topics.each do |topic| %>
+    <li>
+    <h3></h3>
+     <%= topic.title %>
+     <br>
+      <%= topic.body %>
+    </li>
+    <button>Reply to this topic</button>
+    <br>
+    <br>
+  <ul>
+    <% topic.comments.order(created_at: :desc).each do |comment| %>
+    <li>
+      <%= comment.body %>
+      <br>
+    <% end %>
+    
+    </li>
+  </ul>
+  <hr>
+    <br>
+   
+  <% end %>
+  
+</ul>
+
+<%= image_tag("bar.png")  %>
+</div>

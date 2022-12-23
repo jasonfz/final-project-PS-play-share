@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PsPlayshare</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+
+    <nav>
+
+<div class="container">
+  <%= image_tag("bar.png")  %>
+ <a href="/main"> <%= image_tag("weblogo.png", class: "logo-img")  %> </a>
+
+
+
+   <span class = "title"><%= link_to "△Games", games_path %></span>
+    
+    
+   <span class = "title"><%= link_to "▢Rentals", rentals_path %></span>
+    
+        
+   <span class = "title"><%= link_to "◯Forum", topics_path %></span>
+
+   <span class = "title"><%= link_to "✕SignIn/SignOn", root_path %></span>
+   <%= image_tag("bar1.png")  %>
+  </div>
+    <br>
+    </nav>
+
+
+
+
+
+
+
+
+
+  
+    <%= yield %>
+  </body>
+</html>

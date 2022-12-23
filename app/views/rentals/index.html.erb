@@ -1,0 +1,33 @@
+<div class="container">
+
+
+
+<h2>Game Rentals Page</h2>
+<h4>All available game rentals here...</h4>
+<br>
+<%= image_tag("bar6.png")  %>
+<br>
+<br>
+<hr>
+
+<% @rentals.each do |rental| %>
+
+  <div>
+    <br>
+    <h3><%= link_to rental.title, rental %></h3>
+    <br>
+    <%= image_tag(rental.image_url, class: "index-image")%>
+    <br>
+    <br>
+    <h5>Game owner: <%= rental.user.first_name %></h5>
+    <h5>Game owner address: Vancouver Area</h5>
+    <h5>Rental Price: $<%= rental.rental_price %></h5>
+      
+    <h5>Rental period: <%= rental.rental_time %> weeks</h5>
+    
+    
+    <hr>
+  </div>
+<% end %>
+
+</div>

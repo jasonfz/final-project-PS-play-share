@@ -1,0 +1,42 @@
+
+
+<div class="container">
+<h2>Games Catalog Page</h2>
+<h4>A place to find all the games you want to play...</h4>
+<br>
+
+<%= image_tag("bar6.png")  %>
+<br>
+<br>
+<hr>
+
+</div>
+<div class="container">
+  <% @games.each do |game| %>
+    <ul>
+      <div>
+      <div>
+        
+        <h4><%= link_to game.title, game %></h4>
+     
+        <br>
+      </div>
+    
+       
+          
+      <%= image_tag(game.image_url, class: "index-image")%>
+      <br>
+      <br>
+      <h5>Game Review Score</h5>
+      <h5>Most played ranking</h5>
+      
+   
+        </ul>
+        
+     
+      <hr>
+      <br>
+
+  <% end %>
+  <%= image_tag("bar.png")  %>
+</div>

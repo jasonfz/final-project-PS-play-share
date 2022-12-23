@@ -1,0 +1,39 @@
+
+<div class="container">
+ 
+    <h2>Game Rental Show page</h2>
+    <h5>To rent this game and contact with game owner..</h5>
+    <br>
+    <%= image_tag("bar1.png")  %>
+    <br>
+    <br>
+    <ul>
+    <h2><%= @rental.title %></h2>
+    <br>
+    <%= image_tag(@rental.image_url, class: "show-image")%>
+    <br>
+    <br>
+    <h4>Game owner: <%= @rental.user.first_name %></h4>
+    <br>
+    <h5>Game owner address: Vancouver Area</h5>
+    <br>
+    <h5>Game owner discription:</h5>
+    <p><%= @rental.description %></p>
+
+    <br>
+    <h4>Rental price:</h4>
+    <h5>$ <%= @rental.rental_price %>  </h5>
+
+    <h4>Rental time:</h4>
+    <h5>$ <%= @rental.rental_time %> weeks </h5>
+    <br>
+
+
+    <button>Leave a message</button> 
+
+ 
+
+</div>
+<div class="container">
+<%= image_tag("bar.png")  %>
+</div>
